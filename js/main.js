@@ -29,7 +29,7 @@ for (const tag in articlesByTag) {
   sortedArticles.forEach(({ title, slug }) => {
     const li = document.createElement('li');
     const a = document.createElement('a');
-    a.href = `article.html?slug=${slug}`;
+    a.href = `template/article.html?slug=${slug}`;
     a.textContent = title;
     li.appendChild(a);
     tagUl.appendChild(li);
