@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Article de Blog</title>
+  <script src="base.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="img/blog-scurit--cyber-high-resolution-logo-grayscale-transparent.png">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      border-radius: 10px;
+      padding: 40px;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    .meta {
+      font-size: 0.95rem;
+      color: #777;
+      margin-bottom: 30px;
+    }
+
+    article p {
+      margin-bottom: 20px;
+    }
+
+    article h2 {
+      font-size: 1.5rem;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      color: #444;
+    }
+
+    article img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: #999;
+      border-top: 1px solid #eee;
+      padding-top: 20px;
+    }
+
+    .navbar {
+  background-color: #fff;
+  padding: 15px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #222;
+  transition: color 0.3s ease;
+}
+
+.navbar-logo:hover {
+  color: #007bff;
+}
+
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      article h2 {
+        font-size: 1.25rem;
+      }
+
+      .container {
+        padding: 20px;
+        margin: 30px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">CyberSecBlog</a>
+        </div>
+    </nav>
+  <div class="container">
+    <header>
+      <h1 id="titre"></h1>
+      <div class="meta">Par Pierre-Louis Sans — 2 juillet 2025</div>
+    </header>
+
+    <article id="content">
+
+</article>
+
+
+    <footer>
+      &copy; 2025 Blog de Pierre-Louis. Tous droits réservés.
+    </footer>
+  </div>
+</body>
+</html>

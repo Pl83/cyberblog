@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="img/blog-scurit--cyber-high-resolution-logo-grayscale-transparent.png">
+  <title>Accueil - Blog Sécurité & Cyber</title>
+  <script src="base.js" defer></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 40px 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      border-radius: 10px;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      color: #222;
+      text-align: center;
+    }
+
+    header p.subtitle {
+      font-size: 1.1rem;
+      color: #555;
+      text-align: center;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #444;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 8px;
+    }
+
+    section p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 18px;
+    }
+
+    ul.themes-list {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    ul.themes-list li {
+      background-color: #e9ecef;
+      color: #333;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: background-color 0.3s ease;
+      cursor: default;
+    }
+
+    ul.themes-list li:hover {
+      background-color: #dee2e6;
+    }
+
+    /* Section articles */
+    #articles-list ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    #articles-list ul li {
+      margin-bottom: 12px;
+    }
+
+    #articles-list ul li a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    #articles-list ul li a:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: #999;
+      border-top: 1px solid #eee;
+      padding-top: 20px;
+      text-align: center;
+    }
+
+    .navbar {
+  background-color: #fff;
+  padding: 15px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #222;
+  transition: color 0.3s ease;
+}
+
+.navbar-logo:hover {
+  color: #007bff;
+}
+
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      section h2 {
+        font-size: 1.4rem;
+      }
+
+      .container {
+        padding: 20px 15px;
+        margin: 30px 10px;
+      }
+
+      ul.themes-list {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">CyberSecBlog</a>
+        </div>
+    </nav>
+  <div class="container">
+    <header>
+      <h1>Blog Sécurité & Cyber</h1>
+      <p class="subtitle">
+        Votre source fiable et élégante d’analyses, tutoriels et actualités dans le domaine de la cybersécurité.
+      </p>
+    </header>
+
+    <section id="about-us">
+      <h2>Qui sommes-nous ?</h2>
+      <p>
+        Passionnés par la sécurité informatique, nous décryptons pour vous les dernières vulnérabilités, techniques d’attaque et solutions de protection. Notre objectif est de vous fournir un contenu clair, précis et à jour, adapté aussi bien aux débutants qu’aux professionnels.
+      </p>
+      <p>
+        À travers des articles détaillés et des analyses pratiques, nous vous accompagnons pour mieux comprendre les enjeux majeurs de la cybersécurité moderne.
+      </p>
+    </section>
+
+    <section id="themes">
+      <h2>Thèmes abordés</h2>
+      <ul class="themes-list">
+        <li>Vulnérabilités Web</li>
+        <li>Exploitation & Challenges CTF</li>
+        <li>Cryptographie</li>
+        <li>Sécurité Réseau</li>
+        <li>Reverse Engineering</li>
+        <li>Obfuscation & Code Source</li>
+        <li>Analyse de Malware</li>
+        <li>Actualités Cyber</li>
+        <li>Conseils & Bonnes pratiques</li>
+      </ul>
+    </section>
+
+    <section id="articles-list">
+      <h2>Nos articles récents</h2>
+      <ul id="list-articles">
+        <!-- Articles injectés ici via JS -->
+      </ul>
+    </section>
+
+    <footer>
+      &copy; 2025 Blog Sécurité & Cyber. Tous droits réservés.
+    </footer>
+  </div>
+  </div>
+</body>
+</html>
