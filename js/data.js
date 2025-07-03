@@ -6,7 +6,7 @@ const ctwelve = [`CSRF - 0 protection`, `csrf-0-prot`, `<p>
   <p>
     La première étape consiste à créer un compte utilisateur standard via le formulaire d’inscription proposé par l'application. Une fois connecté avec ce compte, l’accès à la page <code>/profile</code> permet de constater la présence d’un formulaire de mise à jour du profil, contenant notamment la case à cocher <code>status</code> qui semble liée aux droits administrateur.
   </p>
-  <img src="img/c12_1.png" alt="">
+  <img loading="lazy" src="../img/c12_1.png" alt="">
   <br>
   <h2>Étape 2 — Récupération du formulaire</h2>
   <p>
@@ -18,14 +18,14 @@ const ctwelve = [`CSRF - 0 protection`, `csrf-0-prot`, `<p>
   <p>
     En analysant ce formulaire, on en extrait les champs essentiels permettant de modifier le profil. Voici un exemple épuré et modifié du formulaire, ciblant le compte <code>admin</code> et cochant la case <code>status</code> :
   </p>
-  <img src="img/c12_2.png" alt="">
+  <img loading="lazy" src="../img/c12_2.png" alt="">
   <br>
   <pre><code>&lt;form id="myForm" style="display: none;" name="myForm" action="http://challenge01.root-me.org/web-client/ch22/?action=profile" method="post" enctype="multipart/form-data"&gt;
   &lt;input type="text" name="username" value="admin"&gt;
   &lt;input type="checkbox" name="status" checked&gt;
 &lt;/form&gt;
 &lt;script&gt;document.myForm.submit()&lt;/script&gt;</code></pre>
-    <img src="img/c12_3.png" alt="">
+    <img loading="lazy" src="../img/c12_3.png" alt="">
   <br>
   <h2>Étape 3 — Injection via le formulaire de contact</h2>
   <p>
@@ -35,7 +35,7 @@ const ctwelve = [`CSRF - 0 protection`, `csrf-0-prot`, `<p>
   <p>
     En injectant le formulaire CSRF complet, avec le script de soumission automatique, dans ce champ de contact, l’administrateur déclenchera involontairement la requête POST lors de la lecture du message dans son interface d'administration.
   </p>
-  <img src="img/c12_4.png" alt="">
+  <img loading="lazy" src="../img/c12_4.png" alt="">
   <br>
   <h2>Étape 4 — Exécution du CSRF</h2>
   <p>
@@ -80,7 +80,7 @@ const cten = [`XSS - Stockée 1`, `xss-stock-1`, ` <p>
   <p>
     Cette injection redirige silencieusement le navigateur de la victime vers une URL contenant son cookie de session dans les paramètres GET. Le service Webhook enregistre automatiquement cette requête, ce qui permet d’en extraire le cookie.
   </p>
-<img src="img/c10_1.png" alt="">
+<img loading="lazy" src="../img/c10_1.png" alt="">
   <br>
   <h2>Étape 3 — Visualisation par l'administrateur</h2>
   <p>
@@ -91,7 +91,7 @@ const cten = [`XSS - Stockée 1`, `xss-stock-1`, ` <p>
   <p>
     En se rendant sur l’interface de <code>webhook.site</code>, on peut consulter toutes les requêtes reçues. Le cookie de session de l’administrateur apparaît dans l'URL reçue sous la forme :
   </p>
-  <img src="img/c10_2.png" alt="">
+  <img loading="lazy" src="../img/c10_2.png" alt="">
   <br>
 
 
@@ -128,7 +128,7 @@ const cnine = [`JavaScript - Obfuscation 3`, `js-obfuscation-3`, `  <p>
   <p>
     Cette chaîne semble représenter une suite de valeurs ASCII encodées sous forme de texte hexadécimal. Le premier réflexe est donc de la transformer en tableau de nombres pour en comprendre la signification.
   </p>
-<img src="img/c9_1.png" alt="">
+<img loading="lazy" src="../img/c9_1.png" alt="">
 <br>
   <h2>Étape 2 — Conversion des données</h2>
   <p>
@@ -151,7 +151,7 @@ const cnine = [`JavaScript - Obfuscation 3`, `js-obfuscation-3`, `  <p>
 String["fromCharCode"](55,56,54,79,115,69,114,116,107,49,50)
 </code></pre>
 
-<img src="img/c9_2.png" alt="">
+<img loading="lazy" src="../img/c9_2.png" alt="">
 <br>
 
   <h2>Étape 3 — Validation du challenge</h2>
@@ -200,7 +200,7 @@ const ceight = [`Javascript - Webpack`, `js-webpack`, `<p>
   <p>
     Les fichiers <code>.map</code> (sourcemaps) contiennent une version non-minifiée ou commentée du code original. Ils sont utilisés pour faciliter le débogage, mais peuvent aussi exposer des informations sensibles si mal configurés.
   </p>
-  <img src="img/c8_1.png" alt="">
+  <img loading="lazy" src="../img/c8_1.png" alt="">
   <br>
   <h2>Étape 3 — Analyse du fichier source map</h2>
   <p>
@@ -213,7 +213,7 @@ const ceight = [`Javascript - Webpack`, `js-webpack`, `<p>
   <p>
     Le flag est directement inscrit dans le fichier source map, preuve d’un oubli de nettoyage avant déploiement.
   </p>
-<img src="img/c8_2.png" alt="">
+<img loading="lazy" src="../img/c8_2.png" alt="">
   <br>
   <h2>Conclusion</h2>
   <p>
@@ -253,7 +253,7 @@ const cseven = [`JavaScript - Native code`, `js-natif-code`, `<p>
   <p>
     Toutefois, puisque ce script est exécuté par le navigateur sans générer d’erreurs, on peut en conclure qu’il est syntaxiquement valide et que son contenu peut être interprété par l’environnement JavaScript.
   </p>
-  <img src="img/c7_1.png" alt="">
+  <img loading="lazy" src="../img/c7_1.png" alt="">
   <br>
   <h2>Étape 2 — Découpage des instructions</h2>
   <p>
@@ -263,7 +263,7 @@ const cseven = [`JavaScript - Native code`, `js-natif-code`, `<p>
   <p>
     L’idée est donc de copier l’ensemble du contenu du script, puis de le découper en utilisant ces points-virgules comme délimiteurs. On obtient alors une liste d’expressions ou d’assignations individuelles que l’on peut interpréter manuellement, une par une, dans la console JavaScript.
   </p>
-  <img src="img/c7_2.png" alt="">
+  <img loading="lazy" src="../img/c7_2.png" alt="">
   <br>
   <h2>Étape 3 — Analyse des instructions</h2>
   <p>
@@ -275,7 +275,7 @@ const cseven = [`JavaScript - Native code`, `js-natif-code`, `<p>
   <p>
     Le mot de passe est ainsi exposé en clair à l’intérieur de la fonction. Il s'agit du flag du challenge, que l’on peut copier pour valider l’épreuve.
   </p>
-  <img src="img/c7_3.png" alt="">
+  <img loading="lazy" src="../img/c7_3.png" alt="">
   <br>
   <h2>Conclusion</h2>
   <p>
@@ -307,7 +307,7 @@ const csix = [`JavaScript - Obfuscation 2`, `js-obfuscation-2`, `<p>
 
   <pre><code>
 	var pass = unescape("unescape%28%22String.fromCharCode%2528104%252C68%252C117%252C102%252C106%252C100%252C107%252C105%252C49%252C53%252C54%2529%22%29");</code></pre>
-    <img src="img/c6_1.png" alt="">
+    <img loading="lazy" src="../img/c6_1.png" alt="">
     <br>
   <p>
     Le code contient également une ou plusieurs fonctions, souvent nommées de manière peu explicite, mais dont l’utilité reste compréhensible. Ici, les fonctions <code>unescape</code> et <code>String.fromCharCode()</code> sont utilisées pour décoder la chaîne.
@@ -327,7 +327,7 @@ const csix = [`JavaScript - Obfuscation 2`, `js-obfuscation-2`, `<p>
   <p>
     On peut effectuer cela manuellement dans la console du navigateur :
   </p>
- <img src="img/c6_2.png" alt="">
+ <img loading="lazy" src="../img/c6_2.png" alt="">
     <br>
 
   <h2>Conclusion</h2>
@@ -371,7 +371,7 @@ if(h == unescape(pass))
   <p>
     On comprend alors que la variable <code>pass</code> contient la version chiffrée du mot de passe, et que celle-ci est comparée à l’entrée utilisateur après avoir été déchiffrée avec la fonction <code>unescape()</code>.
   </p>
-  <img src="img/c5_1.png" alt="">
+  <img loading="lazy" src="../img/c5_1.png" alt="">
   <br>
   <h2>Étape 2 — Récupération du mot de passe</h2>
   <p>
@@ -390,7 +390,7 @@ if(h == unescape(pass))
     Le navigateur nous retourne directement le mot de passe en clair :
   </p>
 
-   <img src="img/c5_2.png" alt="">
+   <img loading="lazy" src="../img/c5_2.png" alt="">
   <br>
 
   <h2>Conclusion</h2>
@@ -435,7 +435,7 @@ let parts = creds.split(":");
 let username = parts[0];
 let password = parts[1]; // souvent encodé en base64
   </code></pre>
-  <img src="img/c4_1.png" alt="">
+  <img loading="lazy" src="../img/c4_1.png" alt="">
   <br>
   
 
@@ -482,7 +482,7 @@ if (userInput === "RootMeExample") {
   <p>
     Le mot de passe ici est directement visible sous forme de chaîne de caractères. Il suffit donc de le copier et de le saisir dans l’invite du navigateur pour résoudre le challenge.
   </p>
-  <img src="img/c3_1.png" alt="">
+  <img loading="lazy" src="../img/c3_1.png" alt="">
   <br>
   <h2>Conclusion</h2>
   <p>
@@ -513,7 +513,7 @@ if (pseudo == "4dm1n" && password == "sh.org") {
     // authentification réussie
 }
   </code></pre>
-  <img src="img/c2_1.png" alt="">
+  <img loading="lazy" src="../img/c2_1.png" alt="">
   <br>
   <h2>Étape 2 — Identification des credentials</h2>
   <p>
@@ -552,7 +552,7 @@ const cone = [`HTML - boutons désactivés`, `html-btn`, `      <p>
   <p>
     Pour ce faire, faites un clic droit sur l’élément concerné dans l’inspecteur, sélectionnez “Edit as HTML” ou “Remove attribute” sur <code>disabled</code>.
   </p>
-  <img src="img/c1_1.png" alt="">
+  <img loading="lazy" src="../img/c1_1.png" alt="">
   <br>
   <h2>Conclusion</h2>
   <p>
@@ -569,17 +569,17 @@ const cone = [`HTML - boutons désactivés`, `html-btn`, `      <p>
     Un bon rappel que la sécurité ne doit jamais reposer uniquement sur la couche client.
   </p>`, `rootme`];
 
-const lapsus = [`Analyse du groupe Lapsus$`, `cyber-lapsus`, `<h2>1. Identification du groupe</h2> <p><strong>Nom :</strong> Lapsus$</p> <p><strong>Origine :</strong> Internationale (membres présumés basés au Royaume-Uni et en Amérique du Sud)</p> <p><strong>Affiliations :</strong> Aucune affiliation étatique formelle connue ; considéré comme un groupe de cybercriminels non étatiques</p> <p><strong>Motivations :</strong> Motivations financières principalement, mais aussi réputationnelles. Le groupe adopte un comportement provocateur, axé sur l’humiliation publique de ses cibles via des fuites médiatiques.</p> <h2>2. Historique des opérations</h2> <ul> <li><strong>Décembre 2021 :</strong> Attaque contre le Ministère brésilien de la Santé (perturbation des systèmes COVID-19).</li> <li><strong>Janvier 2022 :</strong> Intrusion dans Impresa, un grand groupe de médias portugais.</li> <li><strong>Février 2022 :</strong> Piratage de NVIDIA – vol de plus de 1 To de données internes.</li> <li><strong>Mars 2022 :</strong> Attaque de Microsoft, compromission d’un compte Azure DevOps, exfiltration du code source partiel de Bing et Cortana.</li> <li><strong>Avril 2022 :</strong> Plusieurs membres arrêtés par la police britannique.</li> </ul> <img src="img/lapsus.png" alt=""> <h2>2.5. Mise en relations avec d'autre groupe connue.</h2>
-     <img src="img/graph.png" alt="">
+const lapsus = [`Analyse du groupe Lapsus$`, `cyber-lapsus`, `<h2>1. Identification du groupe</h2> <p><strong>Nom :</strong> Lapsus$</p> <p><strong>Origine :</strong> Internationale (membres présumés basés au Royaume-Uni et en Amérique du Sud)</p> <p><strong>Affiliations :</strong> Aucune affiliation étatique formelle connue ; considéré comme un groupe de cybercriminels non étatiques</p> <p><strong>Motivations :</strong> Motivations financières principalement, mais aussi réputationnelles. Le groupe adopte un comportement provocateur, axé sur l’humiliation publique de ses cibles via des fuites médiatiques.</p> <h2>2. Historique des opérations</h2> <ul> <li><strong>Décembre 2021 :</strong> Attaque contre le Ministère brésilien de la Santé (perturbation des systèmes COVID-19).</li> <li><strong>Janvier 2022 :</strong> Intrusion dans Impresa, un grand groupe de médias portugais.</li> <li><strong>Février 2022 :</strong> Piratage de NVIDIA – vol de plus de 1 To de données internes.</li> <li><strong>Mars 2022 :</strong> Attaque de Microsoft, compromission d’un compte Azure DevOps, exfiltration du code source partiel de Bing et Cortana.</li> <li><strong>Avril 2022 :</strong> Plusieurs membres arrêtés par la police britannique.</li> </ul> <img loading="lazy" src="../img/lapsus.png" alt=""> <h2>2.5. Mise en relations avec d'autre groupe connue.</h2>
+     <img loading="lazy" src="../img/graph.png" alt="">
      <br> <h2>3. Arsenal technique</h2> <ul> <li><strong>Techniques d’accès :</strong> Ingénierie sociale (SIM-swapping, phishing ciblé), exploitation d’identifiants volés, accès à distance via VPN ou RDP.</li> <li><strong>Outils :</strong> Peu ou pas de malwares sophistiqués ; les outils sont souvent publics ou manuels (TeamViewer, AnyDesk).</li> <li><strong>Infrastructure :</strong> Utilisation de Telegram pour la communication et la publication de fuites, stockage cloud pour exfiltration (Mega, Dropbox).</li> </ul> <h2>4. Victimologie</h2> <ul> <li><strong>Secteurs ciblés :</strong> Technologies, médias, télécoms, administrations publiques.</li> <li><strong>Géographie :</strong> Monde entier, avec des cibles majeures au Royaume-Uni, aux États-Unis, au Brésil, et au Portugal.</li> <li><strong>Sélection :</strong> Failles de sécurité exploitables, employés vulnérables à l’ingénierie sociale.</li> </ul> <h2>5. Particularités</h2> <ul> <li><strong>Pas de ransomware :</strong> Contrairement à de nombreux groupes, Lapsus$ ne chiffre pas les fichiers mais vole les données pour rançon ou publication.</li> <li><strong>Exposition médiatique :</strong> Volonté manifeste de faire le buzz et de ridiculiser les entreprises.</li> <li><strong>Communication directe :</strong> Dialogue avec les victimes, messages publics sur Telegram, attitude provocatrice.</li> </ul> <h2>6. Indicateurs de compromission (IoCs)</h2> <ul> <li><strong>IP suspectes :</strong> Souvent associées à des connexions RDP ou VPN venant de lieux inhabituels.</li> <li><strong>Comptes compromis :</strong> Utilisation d’identifiants d’employés postés sur des forums ou marchés noirs.</li> <li><strong>Telegram :</strong> Canal Telegram “Lapsus$” utilisé pour publier les preuves de compromission.</li> </ul> <h2>7. Contre-mesures</h2> <ul> <li><strong>Renforcement MFA :</strong> Authentification multifactorielle renforcée, en particulier pour les accès sensibles.</li> <li><strong>Protection contre SIM-swapping :</strong> Verrouillage des cartes SIM et sensibilisation des employés.</li> <li><strong>Surveillance interne :</strong> Détection des comportements inhabituels sur les comptes utilisateurs.</li> <li><strong>Formation :</strong> Former les équipes à l’ingénierie sociale et à la reconnaissance des tentatives de phishing ciblé.</li> </ul> `, `hackers`];
 
 const lazarus = [`Analyse du groupe Lazarus`, `cyber-lazarus`, `<h2>1. Identification du groupe</h2> <p><strong>Nom :</strong> Lazarus Group (également connu sous les noms HIDDEN COBRA, Guardians of Peace)</p> <p><strong>Origine :</strong> Corée du Nord</p> <p><strong>Affiliations :</strong> Attribué à la Reconnaissance Générale (RGB), l'agence de renseignement nord-coréenne</p> <p><strong>Motivations :</strong> Mixtes : politiques (cyberespionnage, sabotage), économiques (vols pour financement de l’État)</p> <h2>2. Historique des opérations</h2> <ul> <li><strong>2014 :</strong> Attaque de Sony Pictures (révélations internes massives, destruction de données, motivations politiques liées au film *The Interview*)</li> <li><strong>2016 :</strong> Compromission de la Banque du Bangladesh – tentative de vol de 1 milliard de dollars via SWIFT (81 millions transférés avec succès)</li> <li><strong>2017 :</strong> Propagation du ransomware WannaCry (attaque massive affectant les hôpitaux britanniques, entreprises internationales)</li> <li><strong>2020–2023 :</strong> Campagnes contre les secteurs pharmaceutiques et les entreprises crypto, ciblage des chercheurs en cybersécurité</li> <li><strong>2022–2024 :</strong> Opérations contre les plateformes crypto (Axie Infinity – vol de 620 millions USD), attaques sur l’industrie de la défense</li> </ul> 
-<img src="img/lazarus.png" alt="">
+<img loading="lazy" src="../img/lazarus.png" alt="">
 <h2>2.5. Mise en relations avec d'autre groupe connue.</h2>
-     <img src="img/graph.png" alt="">
+     <img loading="lazy" src="../img/graph.png" alt="">
      <br> <h2>3. Arsenal technique</h2> <ul> <li><strong>Malwares :</strong> Destover, WannaCry, FallChill, AppleJeus, Manuscrypt, Dtrack</li> <li><strong>Méthodes d’intrusion :</strong> Hameçonnage (phishing) très ciblé, spear phishing avec des fichiers malveillants Word/Excel, exploitation de vulnérabilités zero-day</li> <li><strong>Infrastructure :</strong> Réseaux de serveurs relais, DNS compromis, tunnels VPN chiffrés, infrastructures parfois partagées avec d’autres groupes nord-coréens</li> </ul> <h2>4. Victimologie</h2> <ul> <li><strong>Secteurs ciblés :</strong> Médias, finance (banques, crypto), défense, santé, cybersécurité</li> <li><strong>Géographie :</strong> Monde entier, avec des cibles en Corée du Sud, aux États-Unis, en Europe, en Asie du Sud-Est</li> <li><strong>Sélection :</strong> Organisations d’intérêt stratégique, entreprises riches ou politiquement sensibles</li> </ul> <h2>5. Particularités</h2> <ul> <li><strong>Actions hybrides :</strong> Mélange de sabotage, vol financier et espionnage pur</li> <li><strong>Évolution constante :</strong> Capacité d’adaptation technique et tactique très élevée</li> <li><strong>Faux profils :</strong> Utilisation de fausses identités LinkedIn, GitHub ou Discord pour approcher les victimes</li> </ul> <h2>6. Indicateurs de compromission (IoCs)</h2> <ul> <li><strong>Domaines malveillants :</strong> serveurs C2 déguisés en services légitimes (ex : Google Update, Microsoft Help)</li> <li><strong>Hashes malwares :</strong> Nombreux identifiants SHA256 publics pour AppleJeus, Dtrack, etc.</li> <li><strong>Comportements réseaux :</strong> Connexions sortantes vers serveurs .onion, tentatives de tunneling DNS</li> </ul> <h2>7. Contre-mesures</h2> <ul> <li><strong>Segmentation réseau :</strong> Limiter les mouvements latéraux en compartimentant les environnements critiques</li> <li><strong>Surveillance accrue :</strong> Logs réseau, détection comportementale (EDR), surveillance des accès sortants</li> <li><strong>Vérification des identités :</strong> Valider l’identité des contacts externes (notamment sur LinkedIn, GitHub)</li> <li><strong>Mise à jour régulière :</strong> Patch management rigoureux, notamment pour éviter les exploits de vulnérabilités connues</li> </ul>`, `hackers`];
 
-const apt28 = [`Analyse du groupe APT28`, `cyber-apt28`, `        <h2>1. Identification du groupe</h2> <p><strong>Nom :</strong> APT28 (également connu sous les noms Fancy Bear, Sofacy, STRONTIUM)</p> <p><strong>Origine :</strong> Russie</p> <p><strong>Affiliations :</strong> Lié au renseignement militaire russe (GRU, Direction principale du renseignement)</p> <p><strong>Motivations :</strong> Politiques (cyberespionnage, influence politique), militaires (collecte d’informations sensibles), parfois économiques</p> <h2>2. Historique des opérations</h2> <ul> <li><strong>2007–2014 :</strong> Campagnes d’espionnage ciblant les gouvernements occidentaux, notamment en Europe de l’Est et aux États-Unis</li> <li><strong>2014 :</strong> Attaques massives contre des institutions politiques ukrainiennes lors du conflit en Ukraine</li> <li><strong>2016 :</strong> Ingérence dans les élections présidentielles américaines (phishing des comptes e-mails du Parti Démocrate)</li> <li><strong>2017 :</strong> Attaques contre des organisations de défense et des médias occidentaux, propagation de malwares sophistiqués</li> <li><strong>2018–2023 :</strong> Campagnes régulières de cyberespionnage sur des infrastructures critiques, secteurs militaires, diplomatiques, énergétiques</li> </ul> <img src="img/apt28.png" alt=""> <h2>2.5. Mise en relations avec d'autre groupe connue.</h2>     <img src="img/graph.png" alt="">
+const apt28 = [`Analyse du groupe APT28`, `cyber-apt28`, `        <h2>1. Identification du groupe</h2> <p><strong>Nom :</strong> APT28 (également connu sous les noms Fancy Bear, Sofacy, STRONTIUM)</p> <p><strong>Origine :</strong> Russie</p> <p><strong>Affiliations :</strong> Lié au renseignement militaire russe (GRU, Direction principale du renseignement)</p> <p><strong>Motivations :</strong> Politiques (cyberespionnage, influence politique), militaires (collecte d’informations sensibles), parfois économiques</p> <h2>2. Historique des opérations</h2> <ul> <li><strong>2007–2014 :</strong> Campagnes d’espionnage ciblant les gouvernements occidentaux, notamment en Europe de l’Est et aux États-Unis</li> <li><strong>2014 :</strong> Attaques massives contre des institutions politiques ukrainiennes lors du conflit en Ukraine</li> <li><strong>2016 :</strong> Ingérence dans les élections présidentielles américaines (phishing des comptes e-mails du Parti Démocrate)</li> <li><strong>2017 :</strong> Attaques contre des organisations de défense et des médias occidentaux, propagation de malwares sophistiqués</li> <li><strong>2018–2023 :</strong> Campagnes régulières de cyberespionnage sur des infrastructures critiques, secteurs militaires, diplomatiques, énergétiques</li> </ul> <img loading="lazy" src="../img/apt28.png" alt=""> <h2>2.5. Mise en relations avec d'autre groupe connue.</h2>     <img loading="lazy" src="../img/graph.png" alt="">
      <br> <h2>3. Arsenal technique</h2> <ul> <li><strong>Malwares :</strong> Sofacy, X-Agent, Zebrocy, Fancy Bear Downloader, CHOPSTICK</li> <li><strong>Méthodes d’intrusion :</strong> Phishing ciblé (spear phishing), exploitation de vulnérabilités zero-day, compromission de serveurs VPN et proxies</li> <li><strong>Infrastructure :</strong> Réseaux de serveurs C2 répartis mondialement, utilisation de domaines compromis et serveurs relais, faux sites légitimes</li> </ul> <h2>4. Victimologie</h2> <ul> <li><strong>Secteurs ciblés :</strong> Gouvernements, forces armées, organismes de sécurité, partis politiques, médias, industries stratégiques (énergie, défense)</li> <li><strong>Géographie :</strong> Principalement Europe, États-Unis, Ukraine, OTAN, mais aussi Moyen-Orient et Asie centrale</li> <li><strong>Sélection :</strong> Cibles à haute valeur stratégique, responsables politiques, chercheurs en sécurité, journalistes</li> </ul> <h2>5. Particularités</h2> <ul> <li><strong>Opérations de longue durée :</strong> Campagnes d’espionnage sur plusieurs années avec persistence élevée</li> <li><strong>Techniques d’obfuscation :</strong> Utilisation de multiples couches de chiffrement et d’outils pour masquer les communications</li> <li><strong>Utilisation mixte :</strong> Combinaison d’espionnage, de désinformation et d’ingérence politique</li> </ul> <h2>6. Indicateurs de compromission (IoCs)</h2> <ul> <li><strong>Domaines malveillants :</strong> Plusieurs domaines liés à des faux sites gouvernementaux ou liés à des infrastructures critiques</li> <li><strong>Hashes malwares :</strong> Identifiants SHA256 connus pour Sofacy, X-Agent, Zebrocy, disponibles dans les bases publiques</li> <li><strong>Comportements réseaux :</strong> Communications régulières vers des serveurs C2 basés sur des protocoles propriétaires, utilisation de tunnels HTTPS et DNS</li> </ul> <h2>7. Contre-mesures</h2> <ul> <li><strong>Formation des utilisateurs :</strong> Sensibilisation au phishing ciblé et aux faux liens</li> <li><strong>Surveillance réseau :</strong> Détection des communications anormales avec serveurs C2, analyse comportementale (EDR)</li> <li><strong>Mise à jour des systèmes :</strong> Patch rapide des vulnérabilités zero-day</li> <li><strong>Authentification forte :</strong> Utilisation de MFA pour l’accès aux systèmes critiques</li> <li><strong>Segmentation :</strong> Isolation des réseaux sensibles pour limiter les déplacements latéraux</li> </ul>`, `hackers`];
 
 const Wannacry = [`WannaCry - Cyberattaque mondiale de 2017`, `wannacry`, ` <p>
