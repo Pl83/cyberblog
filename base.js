@@ -917,7 +917,7 @@ const articles = [ctwelve, cten, cnine, ceight, cseven, csix, cfive, cfour, cthr
 
 
 
-if (window.location.href.includes('index')){
+if (!window.location.href.includes('article')){
 const ul = document.getElementById('list-articles');
 
 // Regrouper les articles par tag
